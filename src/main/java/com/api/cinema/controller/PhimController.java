@@ -33,31 +33,18 @@ public class PhimController {
     @Autowired
     private PhimService phimService;
 
-    @Autowired
-    private RapService rapService;
 
-    @Autowired
-    private HeThongRapService heThongRapService;
 
     @GetMapping("/DanhSach")
     public ResponseEntity<List<PhimDTO>> danhSachPhim(){
         return new ResponseEntity<>(phimService.findAllMovie(), HttpStatus.OK);
     }
 
-    @GetMapping("/DanhSachRap/{id}")
-    public ResponseEntity<List<Rap>> danhSachRap(@PathVariable(name = "id") int id){
-        return new ResponseEntity<>(rapService.findByMaCumRap(id), HttpStatus.OK);
+    @GetMapping("/ChiTietPhim/{id}")
+    public  ResponseEntity<PhimDTO> chiTietPhim(@PathVariable(name = "id") Long id){
+        return new ResponseEntity<>(phimService.getById(id).get(), HttpStatus.OK);
     }
 
-    @GetMapping("/DanhSachRap")
-    public ResponseEntity<List<Rap>> danhSachRap(){
-        return new ResponseEntity<>(rapService.findAllRap(), HttpStatus.OK);
-    }
-
-    @GetMapping("/DanhSachHeThongRap")
-    public ResponseEntity<List<HeThongRap>> danhSachHeThongRap(){
-        return new ResponseEntity<>(heThongRapService.findAllHeThongRap(), HttpStatus.OK);
-    }
 
     @GetMapping("/ChiTiet/{id}")
     public ResponseEntity<Response> chiTiet(@PathVariable(name = "id") Long id){
@@ -88,6 +75,7 @@ public class PhimController {
         }else {
             imageUUID = "image";
         }
+        imageUUID = "http://localhost:8080/image/" + imageUUID;
         newPhimDto.setHinhAnh(imageUUID);
         newPhimDto.setTenPhim(tenPhim);
         newPhimDto.setMoTa(moTa);

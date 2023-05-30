@@ -28,17 +28,10 @@ public class Ghe {
     @NotEmpty
     private double giaVe;
 
-    @NotEmpty
     private boolean daDat;
-
     @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "rap_id")
     private Rap rap;
 
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "taiKhoan_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private TaiKhoan taiKhoan;
 }

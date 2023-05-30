@@ -11,7 +11,7 @@ public class RapDTO {
 
     private String tenRap;
 
-    private List<GheDTO> gheList;
-
-    private CumRapDTO cumRap;
+//    private List<GheDTO> gheList;
+//
+//    private CumRapDTO cumRap;
 }

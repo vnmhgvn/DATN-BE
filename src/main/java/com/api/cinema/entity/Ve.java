@@ -24,4 +24,8 @@ public class Ve {
 
     @NotEmpty
     private LocalDateTime dateTime;
+
+    @ManyToOne
+    @JoinColumn(name = "taiKhoan_id")
+    private TaiKhoan taiKhoan;
 }

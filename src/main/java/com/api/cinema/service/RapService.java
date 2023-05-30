@@ -19,12 +19,16 @@ public class RapService {
         return rapRepository.findAll();
     }
 
-    public Optional<Rap> getRapById(Long id){
+    public Optional<Rap> getRapById(int id){
         return rapRepository.findById(id);
 
     }
 
     public List<Rap> findByMaCumRap(int id){
         return rapRepository.findByCumRapMaCumRap(id);
+    }
+
+    public List<Rap> findByHeThongRap(int id){
+        return rapRepository.findByCumRap_HeThongRap_maHeThongRap(id);
     }
 }

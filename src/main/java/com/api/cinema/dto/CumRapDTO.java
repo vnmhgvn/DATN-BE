@@ -13,8 +13,9 @@ public class CumRapDTO {
     private String tenCumRap;
 
     private String diaChi;
+    private List<LichChieuDTO> lichChieuPhim;
 
-    private List<Rap> rapList;
-
-    private HeThongRapDTO heThongRap;
+//    private List<Rap> rapList;
+//
+//    private HeThongRapDTO heThongRap;
 }

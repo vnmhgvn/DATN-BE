@@ -62,6 +62,11 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(),userDetails.getUsername(),userDetails.getEmail(),roles));
     }
 
+    @GetMapping("/Info/{username}")
+    public ResponseEntity<?> getInfo(@PathVariable(name = "username") String username){
+        TaiKhoan user = userRepository.findByUsername(username).get();
+        return ResponseEntity.ok(user);
+    }
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody TaiKhoanDTO user){
         if(userRepository.existsByUsername(user.getUsername())){

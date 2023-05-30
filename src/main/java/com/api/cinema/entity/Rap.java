@@ -21,7 +21,7 @@ public class Rap {
     @OneToMany(mappedBy = "rap", cascade = CascadeType.ALL)
     private List<Ghe> gheList;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(name = "cumRap_id")
     private CumRap cumRap;

@@ -18,11 +18,6 @@ public class GheDTO {
    
     private double giaVe;
 
-   
-    private boolean daDat;
-
-
     private RapDTO rap;
 
-    private TaiKhoanDTO taiKhoan;
 }

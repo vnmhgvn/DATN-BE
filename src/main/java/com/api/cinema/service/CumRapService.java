@@ -12,7 +12,7 @@ public class CumRapService {
     @Autowired
     private CumRapRepository cumRapRepository;
 
-//    List<CumRap> findByHeThongRap(int id){
-//        return cumRapRepository.find
-//    }
+    public List<CumRap> findByHeThongRap(int id){
+        return cumRapRepository.findByHeThongRap_maHeThongRap(id);
+    }
 }

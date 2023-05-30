@@ -1,5 +1,6 @@
 package com.api.cinema.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,8 +23,8 @@ public class LichChieu {
     @NotEmpty
     private LocalTime gioChieu;
 
-    @NotEmpty
-    private double giaVe;
+//    @NotEmpty
+//    private int giaVe;
 
     @NotEmpty
     private int thoiLuong;
@@ -35,4 +36,19 @@ public class LichChieu {
     @ManyToOne
     @JoinColumn(name = "rap_id")
     private Rap rap;
+
+//    @ManyToOne
+//    @JsonIgnore
+//    @JoinColumn(name = "cumRap_id")
+//    private CumRap cumRap;
+//
+////    @ManyToOne
+////    @JsonIgnore
+////    @JoinColumn(name = "heThongRap_id")
+////    private HeThongRap heThongRap;
+//
+//    @ManyToOne(fetch = FetchType.EAGER)
+//   // @JsonIgnore
+//    @JoinColumn(name = "heThongRap_id")
+//    private HeThongRap heThongRap;
 }

@@ -20,7 +20,7 @@ public class HeThongRap {
     @NotEmpty
     private String logo;
 
-    @OneToMany(mappedBy = "heThongRap", cascade = CascadeType.ALL)
-    private List<CumRap> cumRapList;
+//    @OneToMany(mappedBy = "heThongRap", cascade = CascadeType.ALL)
+//    private List<CumRap> cumRapList;
 
 }

@@ -57,8 +57,7 @@ public class WebSecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers( "/api/auth/**").permitAll()
-                .antMatchers(  "/api/QuanLyPhim/**").permitAll()
-                .antMatchers("/test/**").permitAll()
+                .antMatchers(  "/api/**").permitAll()
                 .antMatchers("/image/**").permitAll()
                 .anyRequest().authenticated();
 

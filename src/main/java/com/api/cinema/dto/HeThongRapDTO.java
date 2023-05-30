@@ -15,5 +15,5 @@ public class HeThongRapDTO {
     
     private String logo;
 
-//    private List<CumRapDTO> cumRapList;
+    private List<CumRapDTO> cumRapChieu;
 }
